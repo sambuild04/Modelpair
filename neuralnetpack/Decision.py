@@ -1,10 +1,15 @@
+import numpy as np
+import tree
+
 class Decisiontree:
     def __init__(self, max_depth=None):
         self.max_depth = max_depth
-        
+
 
     def fit(self, X, y):
         """Build decision tree classifier."""
+        X = np.array(X)
+        y = np.array(y)
         self.n_classes_ = len(set(y))  # classes are assumed to go from 0 to n-1
         self.n_features_ = X.shape[1]
         self.tree_ = self._grow_tree(X, y)
@@ -89,7 +94,7 @@ class Decisiontree:
                     best_thr = (thresholds[i] + thresholds[i - 1]) / 2  # midpoint
 
         return best_idx, best_thr
-    
+
     def _grow_tree(self, X, y, depth=0):
         """Build a decision tree by recursively finding the best split."""
         # Population for each class in current node. The predicted class is the one with
@@ -124,5 +129,3 @@ class Decisiontree:
             else:
                 node = node.right
         return node.predicted_class
-
-        
