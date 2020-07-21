@@ -3,7 +3,7 @@ import numpy as np
 class Preprocessing:
     def __init__(self, dataset):
         self.dataset = dataset
-    def precess(self):
+    def preprocess(self):
         import numpy as np
         import matplotlib.pyplot as plt
         import pandas as pd
@@ -21,3 +21,5 @@ class Preprocessing:
         X_train = sc.fit_transform(X_train)
         X_test = sc.transform(X_test)
         print('Data Preprocessing Is Done!')
+
+        return X_train, X_test, y_train, y_test

@@ -8,7 +8,7 @@
 from setuptools import setup
 
 setup(name='neuralnetpack',
-      version='0.4',
+      version='0.5',
       description='Neural Network distribution',
       packages=['neuralnetpack'],
       zip_safe=False)
