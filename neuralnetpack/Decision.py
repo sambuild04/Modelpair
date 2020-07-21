@@ -1,5 +1,5 @@
 import numpy as np
-import tree
+# import tree
 
 class Decisiontree:
     def __init__(self, max_depth=None):
