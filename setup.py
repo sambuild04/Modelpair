@@ -7,8 +7,8 @@
 
 from setuptools import setup
 
-setup(name='neuralnetpack',
+setup(name='Modelpair',
       version='1.4',
-      description='Neural Network distribution',
-      packages=['neuralnetpack'],
+      description='Model Comparison',
+      packages=['Modelpair'],
       zip_safe=False)
