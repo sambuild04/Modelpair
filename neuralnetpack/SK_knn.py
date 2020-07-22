@@ -2,14 +2,15 @@ from .Preprocess import Preprocessing
 import sklearn
 
 
-class SK_decision:
+class SK_knn:
     def __init__(self, dataset):
         self.dataset = dataset
 #when use, called(SK_decision('project_path'))
-    def generate_skdt(self):
+    def generate_sknn(self):
         X_train, X_test, y_train, y_test = Preprocessing(self.dataset).preprocess()
-        from sklearn.tree import DecisionTreeClassifier
-        classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
+
+        from sklearn.neighbors import KNeighborsClassifier
+        classifier = KNeighborsClassifier(n_neighbors = 5, metric = 'minkowski', p = 2)
         classifier.fit(X_train, y_train)
         from sklearn.metrics import confusion_matrix, accuracy_score
         y_pred = classifier.predict(X_test)
