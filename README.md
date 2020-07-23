@@ -13,9 +13,13 @@ This is a Python package that is designed to compare different machine learning 
 
 ### TO RUN THE PACKAGE FUNCTION:
 ``` from Modelpair import Compare_class ```
-create an instance
-``` compare = Compare_class('your csv data file path) ```
-Then use the compare function
-``` compare.generate_compare() ```
+ - create an instance
+``` shell script
+compare = Compare_class('your csv data file path') 
+```
+ - Then use the compare function
+```shell script 
+compare.generate_compare() 
+```
 
 
